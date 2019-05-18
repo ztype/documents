@@ -316,7 +316,7 @@ parsing time ""Thu May 31 00:00:01 +0000 2012"" as ""2006-01-02T15:04:05Z07:00""
 
 这个不太直白的报错是说，在golang的标准库将`string`与`time.Time`类型互相转换的时候产生了错误。
 
-简单点说，我们给的string不符合golang标准库里的默认时间戳格式(因为Twitter的API最初是用Ruby实现的，Ruby中的默认的时间戳和golang里的默认时间戳不一样)。
+简单点说，我们给的string不符合golang标准库里的默认时间戳格式(因为Twitter的API最初是用Ruby实现的，Ruby中的默认的时间戳格式和golang里的默认时间戳格式不一样)。
 
 如果想要正确地反序列化这个时间戳，我们就需要定义自己的时间类型。
 
@@ -354,7 +354,7 @@ func (t *Timestamp) UnmarshalJSON(b []byte) error {
 
 我们可以利用`time.Parse`方法，它的声明是这样的`func(layout, value string) (Time, error)`。
 
-它接收两个string类型的参数，第一个layoout指明时间格式，第二个是想要解析的内容。它返回一个`time.Time`类型和一个`error`。你可以在[`time`包的文档](https://golang.org/pkg/time/)中看到更多关于这个函数的细节，在这个例子里，我们不用去手写这个layout参数了，因为标准库里已经有一个`time.RubyDate`可以直接使用。
+它接收两个string类型的参数，第一个layout指明时间格式，第二个是想要解析的内容。它返回一个`time.Time`类型和一个`error`。你可以在[`time`包的文档](https://golang.org/pkg/time/)中看到更多关于这个函数的细节，在这个例子里，我们不用去手写这个layout参数了，因为标准库里已经有一个`time.RubyDate`可以直接使用。
 
 实际上，我们可以直接这样调用`time.Parse(time.RubyDate, "Thu May 31 00:00:01 +0000 2012")`来将`Thu May 31 00:00:01 +0000 2012`这个字符串解析成一个`time.Time`类型的数据。
 
