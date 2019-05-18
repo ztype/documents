@@ -14,8 +14,6 @@
 
 一般情况下，大家都会举一些例子来介绍interface的特性。那我们也举一些例子吧，就用Animal好了，我们现实生活中都能见到的东西。我们给这个叫`Animal`的interface定义一个行为：`speak`。那么我们就可以说，任何一个可以`speak`的东西都是一个`Animal`。这就是golang类型系统中的核心思想：抽象描述是的对象能做什么行为，而不是保存了什么数据。
 
-We start by defining our Animal interface:
-
 让我们先来定义一下我们的`Animal` interface:
 
 ``` golang
