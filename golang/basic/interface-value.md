@@ -373,7 +373,7 @@ func (t *Timestamp) UnmarshalJSON(b []byte) error {
 }
 ```
 
-在这里我们截取传入的字节切片是因为它是json元素中的原始数据，包含开始和结束的绰号。在传入`time.Parse`解析之前我们需要将它们去掉。
+在这里我们截取传入的字节切片是因为它是json元素中的原始数据，包含开始和结束的引号。在传入`time.Parse`解析之前我们需要将它们去掉。
 
 整个时间戳的示例代码可以在[这里](http://play.golang.org/p/QpiFsJi-nZ)看到。
 
