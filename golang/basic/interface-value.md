@@ -1,3 +1,9 @@
+---
+title: "Golang Interface"
+date: 2019-05-19T01:52:29+08:00
+draft: false
+---
+
 # 怎样使用golang中的interface
 
 在我使用golang之前，用的最多的语言是python。开始学golang之后，发现golang中的interface特别难以理解。我指的是，基础的用法是很简单的，比如我们很容易就知道怎么使用标准库里的一些interface，但是如果我们想要把自己的interface设计好，还需要一些实际的使用经验。在这篇文章中，我将通过讨论golang中的类型系统来尝试说明怎样有效地使用interface。
