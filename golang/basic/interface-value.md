@@ -455,3 +455,5 @@ if err := GetEntity(req, &u); err != nil {
 Happy coding :)
 
 8:07 am  •  1 October 2012  •  127 notes
+
+source:https://jordanorelli.com/post/32665860244/how-to-use-interfaces-in-go#_=_
